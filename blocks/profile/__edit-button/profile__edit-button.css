@@ -1,7 +1,7 @@
 .profile__edit-button {
   width: 23px;
   height: 23px;
-  background-color: #000000;
+  background-color: rgba(0, 0, 0, 0);
   background-image: url(../../../images/pencil.svg);
   border: 1px solid #ffffff;
   background-repeat: no-repeat;

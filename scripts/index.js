@@ -1,43 +1,42 @@
-const likeButtons = document.querySelectorAll('.elements__like');
+/*const likeButtons = document.querySelectorAll('.elements__like');
 
 for (let i = 0; i < likeButtons.length; i++) {
   likeButtons[i].addEventListener('click', function () {
     likeButtons[i].classList.toggle('elements__like_active');
     likeButtons[i].classList.toggle('elements__like:hover');
   });
-}
+}; */
+/*profileName.textContent = 'Жак-Ив Кусто';*/
+/*profileOccupation.textContent = 'Исследователь океана';*/
 
 let profileName = document.querySelector('.profile__name');
-profileName.textContent = 'Жак-Ив Кусто';
-
 let profileOccupation = document.querySelector('.profile__occupation');
-profileOccupation.textContent = 'Исследователь океана';
-
 let formElement = document.querySelector('.popup__form');
-
-let nameInput = document.querySelector('.popup__name');
-nameInput.value = profileName.textContent;
-
-let jobInput = document.querySelector('.popup__occupation');
-jobInput.value = profileOccupation.textContent;
-
+let nameInput = document.querySelector('.popup__input_type_name');
+let jobInput = document.querySelector('.popup__input_type_occupation');
 let popup = document.querySelector('.popup');
+const openPopupButton = document.querySelector('.profile__edit-button');
+const closePopupButton = document.querySelector('.popup__close-button');
 
-formElement.addEventListener('submit', function (evt) {
+function handleFormSubmit(evt) {
   evt.preventDefault();
   profileName.textContent = nameInput.value;
   profileOccupation.textContent = jobInput.value;
   popup.classList.remove('popup_opened');
-});
+}
 
-const openPopupButton = document.querySelector('.profile__edit-button');
+formElement.addEventListener('submit', handleFormSubmit);
 
-openPopupButton.addEventListener('click', function () {
+function openPopup() {
   popup.classList.add('popup_opened');
-});
+  jobInput.value = profileOccupation.textContent;
+  nameInput.value = profileName.textContent;
+}
 
-const closePopupButton = document.querySelector('.popup__close-button');
+openPopupButton.addEventListener('click', openPopup);
 
-closePopupButton.addEventListener('click', function () {
+function closePopup() {
   popup.classList.remove('popup_opened');
-});
+}
+
+closePopupButton.addEventListener('click', closePopup);
