@@ -7,61 +7,10 @@
   gap: 20px 17px;
   padding-top: 50px;
 }
-.elements__card {
-  width: 282px;
-  height: 361px;
-}
-.elements__image {
-  background-size: cover;
-  width: 282px;
-  height: 282px;
-  border-radius: 10px 10px 0px 0px;
-}
-.elements__card-content {
-  background: #ffffff;
-  display: flex;
-  justify-content: space-between;
-  min-height: 79px;
-  align-items: center;
-  border-radius: 0 0 10px 10px;
-}
-.elements__name {
-  margin: 0;
-  font-weight: 900;
-  font-size: 24px;
-  line-height: 29px;
-  text-overflow: ellipsis;
-  white-space: nowrap;
-  overflow: hidden;
-  color: #000000;
-  padding-left: 20px;
-}
-.elements__like {
-  width: 22px;
-  height: 19px;
-  box-sizing: border-box;
-  padding-right: 41px;
-  background-repeat: no-repeat;
-  transition: opacity 0.3s linear;
-  background-image: url(../../images/Like.svg);
-}
 
-.elements__like_active {
-  width: 22px;
-  height: 19px;
-  box-sizing: border-box;
-  padding-right: 41px;
-  background-repeat: no-repeat;
-  transition: opacity 0.3s linear;
-  background-image: url(../../images/Like-black.svg);
-}
-
-.elements__like:hover {
-  opacity: 0.6;
-  cursor: pointer;
-}
-
-.elements__like_active:hover {
-  opacity: 1;
-  cursor: pointer;
+@media (max-width: 900px) {
+  .elements {
+    padding-top: 38px;
+    justify-items: center;
+  }
 }

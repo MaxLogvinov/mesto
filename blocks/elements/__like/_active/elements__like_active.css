@@ -1,0 +1,14 @@
+.elements__like_active {
+  width: 22px;
+  height: 19px;
+  box-sizing: border-box;
+  padding-right: 41px;
+  background-repeat: no-repeat;
+  transition: opacity 0.3s linear;
+  background-image: url(../../../../images/Like-black.svg);
+}
+
+.elements__like_active:hover {
+  opacity: 1;
+  cursor: pointer;
+}
