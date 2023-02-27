@@ -6,8 +6,8 @@ for (let i = 0; i < likeButtons.length; i++) {
     likeButtons[i].classList.toggle('elements__like:hover');
   });
 }; */
-/*profileName.textContent = 'Жак-Ив Кусто';*/
-/*profileOccupation.textContent = 'Исследователь океана';*/
+/*profileName.textContent = 'Жак-Ив Кусто';
+profileOccupation.textContent = 'Исследователь океана';*/
 
 let profileName = document.querySelector('.profile__name');
 let profileOccupation = document.querySelector('.profile__occupation');
