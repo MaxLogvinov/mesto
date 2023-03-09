@@ -34,66 +34,15 @@
         <button type="button" class="profile__add-button"></button>
       </section>
       <section class="elements">
-        <article class="elements__card">
-          <div
-            class="elements__image"
-            style="background-image: url(./images/Karachaevo.jpg)"
-          ></div>
-          <div class="elements__card-content">
-            <h2 class="elements__name">Карачаево-Черкессия</h2>
-            <button type="button" class="elements__like"></button>
+        <template id="CardTemplate">
+          <div class="elements__card">
+            <div class="elements__image"></div>
+            <div class="elements__card-content">
+              <h2 class="elements__name"></h2>
+              <button type="button" class="elements__like"></button>
+            </div>
           </div>
-        </article>
-        <article class="elements__card">
-          <div
-            class="elements__image"
-            style="background-image: url(./images/Baikal.jpg)"
-          ></div>
-          <div class="elements__card-content">
-            <h2 class="elements__name">Озеро Байкал</h2>
-            <button type="button" class="elements__like"></button>
-          </div>
-        </article>
-        <article class="elements__card">
-          <div
-            class="elements__image"
-            style="background-image: url(./images/Elbrus.jpg)"
-          ></div>
-          <div class="elements__card-content">
-            <h2 class="elements__name">Гора Эльбрус</h2>
-            <button type="button" class="elements__like"></button>
-          </div>
-        </article>
-        <article class="elements__card">
-          <div
-            class="elements__image"
-            style="background-image: url(./images/Sudak.jpg)"
-          ></div>
-          <div class="elements__card-content">
-            <h2 class="elements__name">Судак</h2>
-            <button type="button" class="elements__like"></button>
-          </div>
-        </article>
-        <article class="elements__card">
-          <div
-            class="elements__image"
-            style="background-image: url(./images/Dombay.jpg)"
-          ></div>
-          <div class="elements__card-content">
-            <h2 class="elements__name">Домбай</h2>
-            <button type="button" class="elements__like"></button>
-          </div>
-        </article>
-        <article class="elements__card">
-          <div
-            class="elements__image"
-            style="background-image: url(./images/Kamchatka.jpg)"
-          ></div>
-          <div class="elements__card-content">
-            <h2 class="elements__name">Камчатка</h2>
-            <button type="button" class="elements__like"></button>
-          </div>
-        </article>
+        </template>
       </section>
     </main>
     <footer class="footer">
@@ -117,6 +66,30 @@
             placeholder="Введите профессию"
           />
           <button type="submit" class="popup__save-button">Сохранить</button>
+        </form>
+      </div>
+    </section>
+    <section class="popup popup__add-card">
+      <button
+        type="button"
+        class="popup__close-button popup__close-button_type_add"
+      ></button>
+      <div class="popup__container">
+        <h2 class="popup__title">Новое место</h2>
+        <form name="popup__form" class="popup__form popup__form_type_add">
+          <input
+            type="text"
+            class="popup__input popup__input_type_place"
+            name="place"
+            placeholder="Название"
+          />
+          <input
+            type="text"
+            class="popup__input popup__input_type_link"
+            name="link"
+            placeholder="Ссылка на картинку"
+          />
+          <button type="submit" class="popup__save-button">Создать</button>
         </form>
       </div>
     </section>
