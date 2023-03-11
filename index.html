@@ -36,7 +36,9 @@
       <section class="elements">
         <template id="CardTemplate">
           <div class="elements__card">
-            <div class="elements__image"></div>
+            <div class="elements__image">
+              <button type="button" class="elements__delete-button"></button>
+            </div>
             <div class="elements__card-content">
               <h2 class="elements__name"></h2>
               <button type="button" class="elements__like"></button>
@@ -91,6 +93,16 @@
           />
           <button type="submit" class="popup__save-button">Создать</button>
         </form>
+      </div>
+    </section>
+    <section class="popup popup-photo">
+      <div class="popup-photo__container popup-photo__container_type_photo">
+        <button
+          type="button"
+          class="popup__close-button popup-photo__close-button"
+        ></button>
+        <img class="popup-photo__image popup-photo__image_type_photo" src="" />
+        <p class="popup-photo__title popup__title_type_photo"></p>
       </div>
     </section>
   </body>
