@@ -107,7 +107,7 @@ function handleDeleteButton(event) {
   const card = button.closest('.elements__card');
   card.remove();
 }
-
+//Попап добавления карточки
 const openPopupAddButton = document.querySelector('.profile__add-button');
 const popupAddCard = document.querySelector('.popup__add-card');
 const popupCloseAddButton = document.querySelector(
@@ -152,6 +152,7 @@ function handleFormAddSubmit(evt) {
 
 formAddElement.addEventListener('submit', handleFormAddSubmit);
 
+//Попап открытия увеличенного изображения
 const popupCardImage = document.querySelector('.popup-photo__image_type_photo');
 const popupCardTitle = document.querySelector('.popup__title_type_photo');
 const popupImage = document.querySelector('.popup-photo');
