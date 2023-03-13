@@ -136,9 +136,14 @@ function handleFormAddSubmit(evt) {
       link: linkInput.value,
     },
   ];
-  newAddCard.forEach(addCard);
-  closePopup(popupAddCard);
-  evt.target.reset();
+  if (placeInput.value === '' || linkInput.value === '') {
+    closePopup(popupAddCard);
+    evt.target.reset();
+  } else {
+    newAddCard.forEach(addCard);
+    closePopup(popupAddCard);
+    evt.target.reset();
+  }
 }
 
 formAddElement.addEventListener('submit', handleFormAddSubmit);
