@@ -5,7 +5,9 @@
   background-image: url(../../../images/close-button.svg);
   border: none;
   background-repeat: no-repeat;
-  margin-left: 471px;
+  position: absolute;
+  top: -35px;
+  right: -35px;
   transition: opacity 0.3s linear;
 }
 
@@ -14,8 +16,7 @@
     background-size: cover;
     width: 20px;
     height: 20px;
-    margin-left: 255px;
-    margin-bottom: 16px;
+    right: 0;
   }
 }
 
