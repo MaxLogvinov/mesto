@@ -11,6 +11,8 @@
   color: #ffffff;
   transition: opacity 0.3s linear;
   margin-top: 26px;
+  margin-top: 15px;
+  margin-bottom: 27px;
 }
 
 @media (max-width: 767px) {
@@ -20,6 +22,7 @@
     font-size: 14px;
     line-height: 17px;
     margin-top: 23px;
+    margin-bottom: 0;
   }
 }
 
