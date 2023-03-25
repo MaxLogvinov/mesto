@@ -10,6 +10,10 @@ const jobInput = document.querySelector('.popup__input_type_occupation');
 const popupProfile = document.querySelector('.popup-profile');
 const openPopupButton = document.querySelector('.profile__edit-button');
 const closePopupButtons = document.querySelectorAll('.popup__close-button');
+const saveButtonProfile = document.querySelector(
+  '.popup__save-button_type_profile'
+);
+const saveButtonAdd = document.querySelector('.popup__save-button_type_add');
 
 //Попап профиля
 function handleFormSubmit(evt) {
@@ -34,6 +38,7 @@ function closePopup(popup) {
 function openProfilePopup() {
   jobInput.value = profileOccupation.textContent;
   nameInput.value = profileName.textContent;
+  activeButton(saveButtonProfile, config);
   openPopup(popupProfile);
 }
 openPopupButton.addEventListener('click', openProfilePopup);
@@ -114,6 +119,8 @@ const linkInput = document.querySelector('.popup__input_type_link');
 
 function openAddPopup() {
   openPopup(popupAddCard);
+  formAddElement.reset();
+  resetButton(saveButtonAdd, config);
 }
 
 openPopupAddButton.addEventListener('click', openAddPopup);
