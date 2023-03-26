@@ -16,9 +16,11 @@ function hasInvalidInput(inputList) {
   });
 }
 
-function resetError(popup, config) {
-  const inputList = Array.from(popup.querySelectorAll(config.inputSelector));
-  inputList.forEach((input) => hideInputError(popup, input, config));
+function resetError(formElement, config) {
+  const inputList = Array.from(
+    formElement.querySelectorAll(config.inputSelector)
+  );
+  inputList.forEach((input) => hideInputError(formElement, input, config));
 }
 
 function activeButton(buttonElement, config) {

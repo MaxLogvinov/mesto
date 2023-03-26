@@ -27,7 +27,6 @@ formProfile.addEventListener('submit', handleFormSubmit);
 function openPopup(popup) {
   popup.classList.add('popup_opened');
   document.addEventListener('keydown', closeByEscape);
-  resetError(popup, config);
 }
 function closePopup(popup) {
   popup.classList.remove('popup_opened');
@@ -38,7 +37,7 @@ function openProfilePopup() {
   jobInput.value = profileOccupation.textContent;
   nameInput.value = profileName.textContent;
   activeButton(saveButtonProfile, config);
-
+  resetError(formProfile, config);
   openPopup(popupProfile);
 }
 openPopupButton.addEventListener('click', openProfilePopup);
@@ -121,6 +120,7 @@ function openAddPopup() {
   openPopup(popupAddCard);
   formAddElement.reset();
   resetButton(saveButtonAdd, config);
+  resetError(formAddElement, config);
 }
 
 openPopupAddButton.addEventListener('click', openAddPopup);
@@ -163,7 +163,9 @@ function closeByEscape(evt) {
 const popups = Array.from(document.querySelectorAll('.popup'));
 
 function closeByOverlay(evt) {
-  closePopup(evt.target);
+  if (evt.target.classList.contains('popup_opened')) {
+    closePopup(evt.target);
+  }
 }
 
 popups.forEach((popup) => {
