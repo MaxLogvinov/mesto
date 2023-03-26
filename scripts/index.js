@@ -14,7 +14,6 @@ const saveButtonProfile = document.querySelector(
   '.popup__save-button_type_profile'
 );
 const saveButtonAdd = document.querySelector('.popup__save-button_type_add');
-
 //Попап профиля
 function handleFormSubmit(evt) {
   evt.preventDefault();
@@ -27,8 +26,8 @@ formProfile.addEventListener('submit', handleFormSubmit);
 
 function openPopup(popup) {
   popup.classList.add('popup_opened');
-  popup.addEventListener('mousedown', closeByOverlay);
   document.addEventListener('keydown', closeByEscape);
+  resetError(popup, config);
 }
 function closePopup(popup) {
   popup.classList.remove('popup_opened');
@@ -39,6 +38,7 @@ function openProfilePopup() {
   jobInput.value = profileOccupation.textContent;
   nameInput.value = profileName.textContent;
   activeButton(saveButtonProfile, config);
+
   openPopup(popupProfile);
 }
 openPopupButton.addEventListener('click', openProfilePopup);
@@ -127,20 +127,10 @@ openPopupAddButton.addEventListener('click', openAddPopup);
 
 function handleFormAddSubmit(evt) {
   evt.preventDefault();
-  const newAddCard = [
-    {
-      name: placeInput.value,
-      link: linkInput.value,
-    },
-  ];
-  if (placeInput.value === '' || linkInput.value === '') {
-    closePopup(popupAddCard);
-    evt.target.reset();
-  } else {
-    newAddCard.forEach(addCard);
-    closePopup(popupAddCard);
-    evt.target.reset();
-  }
+  const newAddCard = { name: placeInput.value, link: linkInput.value };
+  addCard(newAddCard);
+  closePopup(popupAddCard);
+  evt.target.reset();
 }
 
 formAddElement.addEventListener('submit', handleFormAddSubmit);
@@ -170,10 +160,12 @@ function closeByEscape(evt) {
 }
 
 //Закрытие попапа по клику overlay
+const popups = Array.from(document.querySelectorAll('.popup'));
 
 function closeByOverlay(evt) {
-  const openedPopup = document.querySelector('.popup_opened');
-  if (evt.target.classList.contains('popup_opened')) {
-    closePopup(openedPopup);
-  }
+  closePopup(evt.target);
 }
+
+popups.forEach((popup) => {
+  popup.addEventListener('mousedown', closeByOverlay);
+});

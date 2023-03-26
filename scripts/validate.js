@@ -1,17 +1,24 @@
 function showInputError(formElement, inputElement, errorMessage, config) {
   const errorElement = formElement.querySelector(`.${inputElement.id}-error`);
   errorElement.textContent = errorMessage;
+  inputElement.classList.add(config.activeErrorClass);
 }
 
 function hideInputError(formElement, inputElement, config) {
   const errorElement = formElement.querySelector(`.${inputElement.id}-error`);
   errorElement.textContent = '';
+  inputElement.classList.remove(config.activeErrorClass);
 }
 
 function hasInvalidInput(inputList) {
   return inputList.some((inputElement) => {
     return !inputElement.validity.valid;
   });
+}
+
+function resetError(popup, config) {
+  const inputList = Array.from(popup.querySelectorAll(config.inputSelector));
+  inputList.forEach((input) => hideInputError(popup, input, config));
 }
 
 function activeButton(buttonElement, config) {
@@ -69,6 +76,7 @@ const config = {
   inputSelector: '.popup__input',
   submitButtonSelector: '.popup__save-button',
   validSubmitButtonClass: 'popup__save-button_valid',
+  activeErrorClass: 'popup__input_type_error',
 };
 
 enableValidation(config);
