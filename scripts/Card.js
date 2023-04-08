@@ -27,11 +27,11 @@ export default class Card {
 
   _clickLike() {
     this._likeButton.classList.toggle('elements__like_active');
-    this._likeButton.classList.toggle('elements__like:hover');
   }
 
   _deleteCard() {
     this._element.remove();
+    this._element = null;
   }
 
   _setEventListeners() {

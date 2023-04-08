@@ -56,11 +56,12 @@ closePopupButtons.forEach((button) => {
 
 function addCard(card) {
   const cardElement = new Card(card, '#CardTemplate', handleCardClick);
-  elements.prepend(cardElement.createCard());
+  const newCards = cardElement.createCard();
+  return newCards;
 }
 
 initialCards.forEach((card) => {
-  addCard(card);
+  elements.prepend(addCard(card));
 });
 
 //Попап добавления карточки
@@ -77,8 +78,8 @@ function handleFormAddSubmit(evt) {
   evt.preventDefault();
   const newAddCard = { name: placeInput.value, link: linkInput.value };
   addCard(newAddCard);
+  elements.prepend(addCard(newAddCard));
   closePopup(popupAddCard);
-  evt.target.reset();
 }
 
 formAddElement.addEventListener('submit', handleFormAddSubmit);
