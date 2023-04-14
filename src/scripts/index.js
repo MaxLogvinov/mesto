@@ -2,6 +2,7 @@ import Card from './Card.js';
 import FormValidator from './FormValidator.js';
 import { openPopup, closePopup } from './utils.js';
 import { initialCards, config } from './constants.js';
+import '../pages/index.css';
 
 const profileName = document.querySelector('.profile__name');
 const profileOccupation = document.querySelector('.profile__occupation');
