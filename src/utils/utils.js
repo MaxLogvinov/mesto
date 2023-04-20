@@ -16,3 +16,10 @@ function closeByEscape(evt) {
     closePopup(openedPopup);
   }
 }
+
+// _handleEscClose(evt) {
+//   if (evt.key === 'Escape') {
+//     const openedPopup = document.querySelector('.popup_opened');
+//     openedPopup.classList.remove('popup_opened');
+//   }
+// }
