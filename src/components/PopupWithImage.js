@@ -10,12 +10,12 @@ export default class PopupWithImage extends Popup {
     this._cardTitle = this._popup.querySelector(
       '.popup-photo__title_type_photo'
     );
-    this.name = name;
-    this.link = link;
+    this._name = name;
+    this._link = link;
   }
   openPopup() {
-    this._cardImage.src = this.link;
-    this._cardTitle.textContent = this.name;
+    this._cardImage.src = this._link;
+    this._cardTitle.textContent = this._name;
     super.openPopup();
   }
 }
