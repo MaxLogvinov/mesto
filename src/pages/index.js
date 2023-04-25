@@ -43,6 +43,14 @@ openPopupProfileButton.addEventListener('click', () => {
 });
 popupProfile.setEventListeners();
 
+//Попап открытия увеличенного изображения
+const popupImage = new PopupWithImage('.popup-photo');
+popupImage.setEventListeners();
+
+function handleCardClick(name, link) {
+  popupImage.openPopup(name, link);
+}
+
 // Функция создания новой карточки
 
 function addCard(card) {
@@ -78,14 +86,3 @@ openPopupAddButton.addEventListener('click', () => {
 });
 
 cardList.renderItems();
-
-//Попап открытия увеличенного изображения
-
-function handleCardClick(e, name, link) {
-  if (e.currentTarget !== e.target) {
-    return;
-  }
-  const popupImage = new PopupWithImage(name, link, '.popup-photo');
-  popupImage.setEventListeners();
-  popupImage.openPopup();
-}
