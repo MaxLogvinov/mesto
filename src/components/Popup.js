@@ -21,7 +21,7 @@ export default class Popup {
         evt.target.classList.contains('popup_opened') ||
         evt.target.classList.contains('popup__close-button')
       ) {
-        this._popup.classList.remove('popup_opened');
+        this.closePopup();
       }
     });
   }
