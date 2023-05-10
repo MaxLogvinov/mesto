@@ -116,7 +116,7 @@ const addCard = function (card) {
       },
 
       handleCardDelete: (card, cardId) => {
-        PopupConfirm.openPopup(card, cardId);
+        popupConfirm.openPopup(card, cardId);
       },
 
       handleCardLike: (cardId) => {
@@ -200,23 +200,22 @@ popupAddCard.setEventListeners();
 
 openPopupAddButton.addEventListener('click', () => {
   popupAddCard.openPopup();
-  formAddElement.reset();
   formAddelementValidator.resetError();
 });
 
 //Экземпляр класса попапа подтверждения удаления
 
-const PopupConfirm = new PopupWithConfirm('.popup-delete', {
+const popupConfirm = new PopupWithConfirm('.popup-delete', {
   handleDeleteFormSubmit: (card, cardId) => {
     api
       .deleteCard(cardId)
       .then(() => {
         card.deleteCard();
-        PopupConfirm.closePopup();
+        popupConfirm.closePopup();
       })
       .catch((err) => {
         console.log(err);
       });
   },
 });
-PopupConfirm.setEventListeners();
+popupConfirm.setEventListeners();
