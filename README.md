@@ -1,4 +1,4 @@
-[Сервис "Mesto"](hhttps://maxlogvinov.github.io/mesto/)
+[Сервис "Mesto"](https://maxlogvinov.github.io/mesto/)
 
 #### Описание:
 
