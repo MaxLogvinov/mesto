@@ -49,8 +49,7 @@ const userInfo = new UserInfo({
 
 const popupProfile = new PopupWithForm('.popup-profile', {
   handleFormSubmit: (userData) => {
-    popupProfile.addText();
-    api
+    return api
       .sendUserInfo(userData)
       .then((res) => {
         userInfo.setUserInfo({
@@ -61,9 +60,6 @@ const popupProfile = new PopupWithForm('.popup-profile', {
       })
       .catch((err) => {
         console.log(err);
-      })
-      .finally(() => {
-        popupProfile.returnText();
       });
   },
 });
@@ -81,8 +77,7 @@ popupProfile.setEventListeners();
 
 const popupAvatar = new PopupWithForm('.popup-avatar', {
   handleFormSubmit: (userData) => {
-    popupAvatar.addText();
-    api
+    return api
       .sendAvatar(userData)
       .then((res) => {
         userInfo.setUserAvatar(res.avatar);
@@ -90,9 +85,6 @@ const popupAvatar = new PopupWithForm('.popup-avatar', {
       })
       .catch((err) => {
         console.log(err);
-      })
-      .finally(() => {
-        popupAvatar.returnText();
       });
   },
 });
@@ -181,8 +173,7 @@ popupImage.setEventListeners();
 
 const popupAddCard = new PopupWithForm('.popup_type_add', {
   handleFormSubmit: (data) => {
-    popupAddCard.addText();
-    api
+    return api
       .addNewCard({ name: data.name, link: data.link })
       .then((card) => {
         cardList.addItem(addCard(card));
@@ -190,9 +181,6 @@ const popupAddCard = new PopupWithForm('.popup_type_add', {
       })
       .catch((err) => {
         console.log(err);
-      })
-      .finally(() => {
-        popupAddCard.returnText();
       });
   },
 });
